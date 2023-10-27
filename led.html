@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Control</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #led-icon {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Enter 0 or 1" oninput="changeLEDColor()">
+    <div id="led-icon"></div>
+
+    <script>
+        function changeLEDColor() {
+            const inputElement = document.getElementById('input');
+            const ledIcon = document.getElementById('led-icon');
+
+            const inputValue = inputElement.value.trim();
+
+            if (inputValue === '0') {
+                ledIcon.style.backgroundColor = 'red';
+            } else if (inputValue === '1') {
+                ledIcon.style.backgroundColor = 'green';
+            } else {
+                ledIcon.style.backgroundColor = 'gray';
+            }
+        }
+    </script>
+</body>
+</html>
